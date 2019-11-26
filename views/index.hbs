@@ -1,0 +1,165 @@
+<style>
+/* Large screens ----------- */
+@media only screen  and (min-width : 1824px) {
+.card{
+	width:;
+	height:;
+}
+}
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1024px) {
+.card{
+	max-width:;
+	max-height:;
+}
+}
+
+@media only screen  and (min-width : 768px) {
+.card{
+	max-width:;
+	max-height:;
+}
+}
+
+@media only screen  and (min-width : 512px) {
+.card{
+	max-width:;
+	max-height:;
+}
+}
+
+@media only screen  and (min-width : 480px) {
+.card{
+	max-width:;
+	max-height:;
+}
+}
+
+@media only screen  and (min-width : 320px) {
+.card{
+	margin-left: -30px;
+	paddin-left: -10px;
+	margin-bottom: 10px;
+	width: 120%;
+	height: ;
+}
+
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+.card{
+	max-width:70%;
+	max-height:;
+}
+
+}
+
+</style>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark topheader" style="background-color:#00203FFF; position:sticky; z-index:1; float:top; margin-top:0; top:0;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <h1 style="color:white;">FlauntIt</h1>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span>{{username}}</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/users/profile">My Profile</a>
+		  <a class="dropdown-item" href="/update/bio">Edit Profile</a>
+          <div class="dropdown-divider"></div>
+		  <a class="dropdown-item" href="/remove/user">Delete Account</a>
+          <a class="dropdown-item" href="/logout">Log Out</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Us</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="/about">About Us</a>
+      </li>
+	  
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+<!-- lightbox css library for image viewing on click --> 
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+
+
+<div class="container" style=" z-index:-1; overflow:hidden;">
+{{# each posts}}
+	<div class="row" style=" margin-right: auto;margin-left: auto; padding-left:15px;">
+		{{# each this}}
+		<div class="col-12 col-md-6 col-lg-4">
+		<div class="card" style="max-width:400px; height:600px;">
+			<br>
+			<span name="pusername" id="username">{{this.username}}</span>
+			<param value="/{{this.userid}}"></param>
+			<span name="postid" class="hidden">{{this.postid}}</span>
+			<br>
+			<a href="/image/{{ this.image }}" data-toggle="lightbox">
+			<img class="card-img-top" src="/image/{{ this.image }}" width="400" height="370" id="img">
+			</a>
+			<!--<div class="card-body fluid">-->
+				<div class="post_details">
+					<form action="/likes/{{this.postid}}" method="POST" style="display:inline;">
+						<!--<span><button class="lkbtn" type="submit" align="center">❤</button></span>-->
+						<span id = heart><button class="lkbtn" type="submit" align="center" style="display:inline; margin:5px; font-size:20px;"><i class="fa fa-heart-o" aria-hidden="true" style="display:inline;"></i></button> </span>
+						<span id="here" style:"font-size:20px;">{{this.likes}}</span>
+					</form>
+					<form action="/requests/{{this.postid}}" method="POST" style="display:inline;">
+						<span style="display:inline;"><button class="btn" style="color:white; background-color: #00203FFF; display:inline;	text-align: center; text-decoration: none; margin:5px; width:80px; padding: 3px; float:right;">Request</button></span>
+					</form>
+			</div>
+			<div>
+				<h5>{{ this.title }}</h5>
+			</div>
+			<div class="des">
+				<p>{{ this.description }}</p>
+			</div>
+		</div>
+		</div>
+		{{/each}}
+	
+	</div>
+	{{/each}}
+</div>
+
+
+<form action="/users/posts" style="margin-bottom:5%; bottom:5%; right:5%; color:00203FFF; background-color:transparent; border:none; text-decoration:none; font-size:48px; float:right; position:sticky; z-index:1;">
+<button type="submit" style="margin-bottom:5%; margin-right:5%; bottom:5%; right:5%; color:00203FFF; background-color:transparent; border:none; text-decoration:none; font-size:48px; float:right; position:sticky; z-index:1;"><h1><i class="fa fa-plus-circle" aria-hidden="true"></i></h1></button>
+</form>
+
+
+
+<script type="text/javascript">
+$('img').mousedown(function (e) {
+  if(e.button == 2) { 
+    return false; // do nothing!
+  }
+});
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+$(document).ready(function () {
+    setInterval(function () {$('#here').load('#here');}, 1000);
+});
+</script>
+
+<!-- lightbox js library for image viewing on click --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script> 
+	

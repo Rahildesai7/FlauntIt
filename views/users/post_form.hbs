@@ -1,0 +1,215 @@
+<style type="text/css">
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+.rcard {
+    position: relative;
+	width: 90%;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:35px;
+    background-color: white;
+}
+}
+
+@media only screen  and (min-width : 320px) {
+.rcard {
+    position: relative;
+	width: 85%;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:35px;
+    background-color: white;
+}
+}
+@media only screen  and (min-width : 480px) {
+.rcard {
+    position: relative;
+	width: 80%;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:35px;
+    background-color: white;
+}
+}
+@media only screen  and (min-width : 512px) {
+.rcard {
+    position: relative;
+	width: 75%;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:35px;
+    background-color: white;
+}
+}
+@media only screen  and (min-width : 768px) {
+.rcard {
+    position: relative;
+	width: 40%;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:35px;
+    background-color: white;
+}
+}
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1024px) {
+.rcard {
+    position: relative;
+	width: 40%;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:35px;
+    background-color: white;
+}
+}
+/* Large screens ----------- */
+@media only screen  and (min-width : 1824px) {
+.rcard {
+    position: relative;
+	width: 40%;
+	height: 100%;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:35px;
+    background-color: white;
+}
+}
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+html {
+  height: 100%;
+  /*Image only BG fallback*/
+  
+  /*background = gradient + image pattern combo*/
+  background: #ADEFD1FF;
+}
+
+body {
+  font-family: montserrat, arial, verdana;
+}
+/*form styles*/
+#msform {
+  padding:5%;
+  width: 100%;
+  height:100%
+  margin: 10%;
+  text-align: center;
+  position: relative;
+}
+/*inputs*/
+#msform input, #msform textarea {
+  position:inherit;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: auto;
+  margin-bottom:10px;
+  width: 90%;
+  font-size: 13px;
+}
+input:invalid {
+  border: 2px solid red;
+}
+input:valid{
+	padding: 20px 15px;
+	float:center;
+}
+</style>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark topheader" style="background-color:#00203FFF; position:sticky; z-index:1; float:top; margin-top:0; top:0;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <h1 style="color:white;">FlauntIt</h1>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span>{{username}}</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/users/profile">My Profile</a>
+		  <a class="dropdown-item" href="/update/bio">Edit Profile</a>
+          <div class="dropdown-divider"></div>
+		  <a class="dropdown-item" href="/remove/user">Delete Account</a>
+          <a class="dropdown-item" href="/logout">Log Out</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Us</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="/about">About Us</a>
+      </li>
+	  
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+<div class="rcard">
+	
+	<form id="msform" action="/users/posts" enctype="multipart/form-data" method="post">
+	<h3>Add Collectible</h3>
+    <input type="text" name="title" placeholder="Title" required>
+  <textarea cols="46" rows="3" name="description" placeholder="Description" required="required" spellcheck="true"></textarea>
+    <input type="file" name="file" id= "file" accept="image/*" required/>
+      <input type="submit" name="submit" class:"btn" style="width: 110px; background: #00203FFF; font-weight: bold; color: white; border: 0 none; border-radius: 1px; cursor: pointer; padding: 5px; margin: 5px;" value="Add Collectible" />
+	</form>
+</div>

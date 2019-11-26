@@ -1,0 +1,230 @@
+<style type="text/css">
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+.rcard {
+    position: relative;
+	width: 90%;
+	height:auto;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:15px;
+    background-color: white;
+}
+}
+
+@media only screen  and (min-width : 320px) {
+.rcard {
+    position: relative;
+	width: 85%;
+	height:auto;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:15px;
+    background-color: white;
+}
+}
+@media only screen  and (min-width : 480px) {
+.rcard {
+    position: relative;
+	width: 80%;
+	height:auto;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:15px;
+    background-color: white;
+}
+}
+@media only screen  and (min-width : 512px) {
+.rcard {
+    position: relative;
+	width: 75%;
+	height:auto;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:15px;
+    background-color: white;
+}
+}
+@media only screen  and (min-width : 768px) {
+.rcard {
+    position: relative;
+	width: 40%;
+	height:auto;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:15px;
+    background-color: white;
+}
+}
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1024px) {
+.rcard {
+    position: relative;
+	width: 40%;
+	height:auto;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:15px;
+    background-color: white;
+}
+}
+/* Large screens ----------- */
+@media only screen  and (min-width : 1824px) {
+.rcard {
+    position: relative;
+	width: 40%;
+	height:auto;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:15px;
+    background-color: white;
+}
+}
+
+
+h1 {
+  @include lato-book;
+  display: inline-block;
+  font-weight: 100;
+  font-size: pxtoem(45, 16);
+  border-bottom: 1px solid hsla(100%, 100%, 100%, 0.3);
+  margin: 0 0 0.1em 0;
+  padding: 0 0 0.4em 0;
+}
+h3 {
+  @include lato-reg;
+  font-size: pxtoem(20, 16);
+  margin: 1em 0 0.4em 0;
+}
+.btn {
+  font-size: pxtoem(17, 16);
+  display: inline-block;
+  padding: 0.74em 1.5em;
+  background-color:#00203FFF;
+  margin: 1.5em 0 0;
+  color: white;
+  border-width: 0 0 0 0;
+  border-bottom: 5px solid;
+  text-transform: uppercase;
+  @include btn(darken($grey, 10%));
+  @include lato-book;
+  &.btn-submit {
+    @include btn($blue);
+  }
+}
+
+body {
+  font-family: montserrat, arial, verdana;
+}
+/*form styles*/
+#msform {
+  padding:5%;
+  width: 100%;
+  height:100%
+  margin: 10%;
+  text-align: center;
+  position: relative;
+}
+/*inputs*/
+p{
+  position:inherit;
+  padding: 15px;
+  margin: auto;
+  margin-bottom:10px;
+  width: 90%;
+  font-size: 22px;
+}
+h1{
+  position:inherit;
+  padding: 15px;
+  margin: auto;
+  margin-bottom:10px;
+  width: 90%;
+  margin-top:3%;
+}
+
+.collapse{
+	width: 100%;
+}
+</style>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark topheader" style="background-color:#00203FFF; position:sticky; z-index:1; float:top; margin-top:0; top:0;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <h1 style="color:white;">FlauntIt</h1>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span>{{username}}</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/users/profile">My Profile</a>
+		  <a class="dropdown-item" href="/update/bio">Edit Profile</a>
+          <div class="dropdown-divider"></div>
+		  <a class="dropdown-item" href="/remove/user">Delete Account</a>
+          <a class="dropdown-item" href="/logout">Log Out</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Us</a>
+      </li>	  
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+<div class="rcard">
+<div class="msform">
+	<h1>ABOUT US</h1>
+	<p><b>FlauntIt</b> is a  website aimed towards empowering the commuity of collectors with the abilty to share their collections.</p>
+	<p>With our website we aim to inculcate the hobby of collecting articles among people.</p>
+</div>
+</div>

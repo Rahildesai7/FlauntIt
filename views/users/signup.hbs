@@ -1,0 +1,288 @@
+<style>
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+.user-form {
+    display: inline block;
+	/*float:center*/
+    width: 90%;
+	height:auto;
+	color:black;
+    height: auto;
+	margin:auto;
+	margin-top:35px;
+    text-align: center;
+    background: white;
+}
+}
+@media only screen  and (min-width : 320px) {
+.user-form {
+    display: inline block;
+	/*float:center*/
+    width: 85%;
+	height:auto;
+	color:black;
+    height: auto;
+	margin:auto;
+	margin-top:35px;
+    text-align: center;
+    background: white;
+}
+}
+
+@media only screen  and (min-width : 480px) {
+.user-form {
+    display: inline block;
+	/*float:center*/
+    width: 80%;
+	height:auto;
+	color:black;
+    height: auto;
+	margin:auto;
+	margin-top:35px;
+    text-align: center;
+    background: white;
+}
+}
+
+@media only screen  and (min-width : 512px) {
+.user-form {
+    display: inline block;
+	/*float:center*/
+    width: 70%;
+	height:auto;
+	color:black;
+    height: auto;
+	margin:auto;
+	margin-top:35px;
+    text-align: center;
+    background: white;
+}
+}
+@media only screen  and (min-width : 768px) {
+.user-form {
+    display: inline block;
+	/*float:center*/
+    width: 50%;
+	height:auto;
+	color:black;
+    height: auto;
+	margin:auto;
+	margin-top:35px;
+    text-align: center;
+    background: white;
+}
+}
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1024px) {
+.user-form {
+    display: inline block;
+	/*float:center*/
+    width: 40%;
+	height:auto;
+	color:black;
+    height: auto;
+	margin:auto;
+	margin-top:35px;
+    text-align: center;
+    background: white;
+}
+}
+
+/* Large screens ----------- */
+@media only screen  and (min-width : 1824px) {
+.user-form {
+    display: inline block;
+	/*float:center*/
+    width: 40%;
+	height:auto;
+	color:black;
+    height: auto;
+	margin:auto;
+	margin-top:35px;
+    text-align: center;
+    background: white;
+}
+}
+
+.user-form .site-logo {
+    font-size: 1.8em;
+    color: black;
+	float:center;
+    display: block;
+}
+
+.user-form p {
+    color: black;
+}
+
+.user-form input,
+.user-form button {
+    padding: 20px 15px;
+	float:center;
+}
+
+.user-form form button {
+    /*width: 100px;*/
+    background: #00203FFF;
+    color: white;
+    border: none;
+	padding: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.2em;
+    max-height: 10%;
+	float:center;
+}
+
+.user-form a {
+    color: red;
+    font-size: 1em;
+    letter-spacing: 1px;
+	float:center;
+}
+
+.modal-body input:focus {
+    border: 1px solid #dcdcdc;
+}
+
+.modal-body button {
+    background: #2196f3;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+}
+
+.modal-body .lead {
+    color: #222;
+}
+
+.flash {
+    font-size: 3em;
+}
+
+.flash .lead {
+    font-weight: 500;
+    color: #a9a9a9;
+    letter-spacing: 1px;
+}
+
+#error i {
+    color: #d9534f;
+}
+
+#success i {
+    color: #5cb85c;
+}
+
+.user-form .or {
+    display: inline-block;
+    font-weight: 800;
+    padding: 5px 10px;
+    color: #fff;
+    position: relative;
+    text-transform: uppercase;
+	float:center;
+}
+
+.or:after,
+.or:before {
+    content: '';
+    position: absolute;
+	float:center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    width: 100%;
+    top: 50%;
+}
+
+.or:after {
+    left: 130%;
+}
+
+.or:before {
+    right: 130%;
+}
+
+span.lead {
+    color: #fff;
+}
+.form-control{
+	width:80%;
+	margin:auto;
+	padding:auto;
+	float:center;
+}
+input:invalid {
+  border: 2px solid red;
+}
+input:valid{
+	padding: 20px 15px;
+	float:center;
+}
+</style>
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark topheader" style="background-color:#00203FFF; position:sticky; z-index:1; float:top; margin-top:0; top:0;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <h1 style="color:white;">FlauntIt</h1>
+    <ul class="navbar-nav ml-auto">
+	  <li class="nav-item">
+        <a class="nav-link" href="/users/signin">Sign In</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Us</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="/about">About Us</a>
+      </li>
+	  
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+
+<div class="container user-form py-5" style="margin-top: 50px;">
+        <p class="lead my-1">Join <b>FlauntIt</b> now and share your collections.</p>
+              <form id="signup" class="mt-5" method="post" action="/users/signup">
+                  <div class="form-group">
+                    <input type="text" name="username" value="" class="form-control" placeholder="Username" required="required" title="For e.g.:'John_doe_123'" aria-required="true" minlength="8" maxlength="20" patter="^[A-Za-z0-9_-]$">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" name="email" value="" class="form-control" placeholder="Email" required="required" title="For e.g.:'abc@gmail.com'" aria-required="true" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" name="password" value="" class="form-control" placeholder="Enter Password" required="required" title="For e.g. Abcde@123" aria-required="true" minlength="8" maxlength="15" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,15}$">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" name="confirm" value="" class="form-control" placeholder="Confirm Password" required="required" title="For e.g. AbcdeF@123" aria-required="true" minlength="8" maxlength="15" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,15}$">
+                  </div>
+				  <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+                    <button type="submit" name="submit" class="btn btn-primary">Sign Up</button>
+              </form>
+			  	<p>Already have an account? <a href="/users/signin">Sign In</a></p>
+
+    <!-- Flash Message modal  -->
+        
+	<div class="modal fade" id="flashModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+
+                     <!-- Error and success Messages -->
+
+                  </div>
+                </div>
+              </div>
+	</div>
+</div>

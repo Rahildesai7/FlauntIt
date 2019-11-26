@@ -1,0 +1,177 @@
+<style>
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+.rcard {
+    position: relative;
+	width: 90%;
+	height: 100%;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: 15px;
+    margin: auto;
+	margin-top:15px;
+    background-color: white;
+}
+}
+
+@media only screen  and (min-width : 320px) {
+.rcard {
+    position: relative;
+	width: 85%;
+	height: 100%;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: 15px;
+    margin: auto;
+	margin-top:15px;
+    background-color: white;
+}
+}
+@media only screen  and (min-width : 480px) {
+.rcard {
+    position: relative;
+	width: 80%;
+	height: 100%;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:15px;
+    background-color: white;
+}
+}
+@media only screen  and (min-width : 512px) {
+.rcard {
+    position: relative;
+	width: 80%;
+	height: 100%;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:15px;
+    background-color: white;
+}
+}
+@media only screen  and (min-width : 768px) {
+.rcard {
+    position: relative;
+	width: 75%;
+	height: 100%;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:15px;
+    background-color: white;
+}
+}
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1024px) {
+.rcard {
+    position: relative;
+	width: 60%;
+	height: 100%;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:15px;
+    background-color: white;
+}
+}
+/* Large screens ----------- */
+@media only screen  and (min-width : 1824px) {
+.rcard {
+    position: relative;
+	width: 60%;
+	height: 100%;
+	color: black;
+	overflow:hide;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    flex: 1 0 22rem;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+	margin-top:15px;
+    background-color: white;
+}
+}
+
+</style>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark topheader" style="background-color:#00203FFF; position:sticky; z-index:1; float:top; margin-top:0; top:0;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <h1 style="color:white;">FlauntIt</h1>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span>{{username}}</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/users/profile">My Profile</a>
+		  <a class="dropdown-item" href="/update/bio">Edit Profile</a>
+          <div class="dropdown-divider"></div>
+		  <a class="dropdown-item" href="/remove/user">Delete Account</a>
+          <a class="dropdown-item" href="/logout">Log Out</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Us</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="/about">About Us</a>
+      </li>
+	  
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+{{# each requestarray}}
+<br>
+
+<div class="rcard">
+	<br>
+	<h1>You've received a buy request!!!</h1>
+	<span><a href="mailto:{{emails.sendername}}" style="color:black; font-size:24px;">{{this.sendername}}</a></span>
+	<h2>Feel free to contact this person via email.</h2>
+	<br>
+</div>
+<br>
+{{/each}}
