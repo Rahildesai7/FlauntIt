@@ -1,7 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var middleware = require('../middleware/middlewares');
-//var nodemailer = require('nodemailer');
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 const methods = require('../secure/methods');
@@ -11,7 +9,6 @@ var Post = require('../models/posts');
 var Request = require('../models/requests');
 
 var crypto = require('crypto');
-//const bodyParser = require(body-parser)
 var multer = require('multer');
 var GridFsStorage = require('multer-gridfs-storage');
 var Grid = require('gridfs-stream');
@@ -19,31 +16,7 @@ var methodOverride = require('method-override');
 
 const path = require('path');
 
-var csrf = require('csurf');
-
-var url = 'https://cloud.mongodb.com/v2/5d0642df553855d23a5f21a3#metrics/replicaSet/5d7262e3aa2dfec3cda311b1/explorer/test/posts/find';
-var assert = require('assert');
-var mongo = require('mongodb');
-//var csrfProtection = csrf();
-//router.use(csrfProtection);
-
-
 /* GET home page. */
-
-  /*router.get('/',(req,res,next)=>{
-  	gfs.files.find().toArray((err, files)=>{
-  	  if(!files || files.length==0){
-  		   res.render('index',{title: 'Exchanger'});
-  	  }else{
-  		  var postChunks = [];
-      	  var chunkSize = 4;
-      	  for (var i = files.length-1; i >= 0; i -= chunkSize) {
-        		postChunks.push(files.slice(i, i + chunkSize))
-      	   }
- 	  res.render('index',{title: 'Exchanger', posts:postChunks});
-  	  }
-  	});
- });*/
 var username ="";
   router.get('/',isLoggedin,(req,res,next)=>{
 	User.findById(req.user,(err,file)=>{
@@ -59,9 +32,7 @@ var username ="";
 		  console.log(files1.length);
   		  var postChunks = [];
       	  var chunkSize = 3;
-      	  /*for (var i = files.length-1; i >= 0; i -= chunkSize) {
-        		postChunks.push(files.slice(i-chunkSize, i+1))
-      	   }*/
+
 		  for (var i = 0; i < files1.length; i += chunkSize) {
         		postChunks.push(files.slice(i, i+chunkSize))
       	   }
@@ -175,26 +146,6 @@ router.post('/users/signup',function(req,res,next){
 
 
 
-/* GET O-AUTH */
-
-/*router.get('/auth/facebook',passport.authenticate('facebook',{scope:['email']}));
-
-router.get('/auth/facebook/callback',passport.authenticate('facebook', { 
-  failureRedirect: '/',
-  successRedirect: '/',
-  failureFlash:true
-}));
-
-router.get('/auth/google',passport.authenticate('google', { scope: ['profile', 'email'] }));
-
-router.get('/auth/google/callback', passport.authenticate('google',{ 
-  failureRedirect: '/',
-  successRedirect: '/',
-  failureFlash:true
-}));*/
-
-
-
 router.get('/users/signin', function (req, res, next) {
   var messages = req.flash('error');
   res.render('users/signin',{ title: 'Exchanger'});
@@ -233,18 +184,9 @@ router.get('/users/profile',isLoggedin,(req,res,next)=>{
 		  		for (var i = 0; i < files1.length; i += chunkSize) {
         			postChunks.push(files.slice(i, i+chunkSize))
       	   		}
-				/*for (var i = file.length-1; i >= 0; i -= 1) {
-        		postchunks.push(file.slice(i, i + 1))
-      	   		}
-				//console.log(postchunks);
-				var userspost = [];
-				userspost = postchunks;
-				posts = file.length;
-				console.log(posts);
-				postchunks = [];*/
+		
 				res.render('users/profile',{username: username,bio: bio,image: image, posts: posts, postarray: postChunks});
 			});
-			//res.render('users/profile',{username: username,bio: bio, posts: posts.length, postarray: postchunks});
 		}
 	});
 	
@@ -416,7 +358,7 @@ router.post('/update/bio',upload.single('file'),(req,res,next)=>{
 	});
 });
 
-var flag = 1;
+
 router.post('/update/',(req,res,next)=>{
 		Post.find({userid:req.user},(err,post)=>{
 		if(post){

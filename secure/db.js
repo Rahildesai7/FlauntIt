@@ -12,14 +12,4 @@ function findData(modal,object){
 	
 }
 
-
-// let gfs
-
-// conn.once('open', () => {
-//   gfs = Grid(conn.db, mongoose.mongo)
-//   gfs.collection('uploads')
-//   console.log('Connection Successful')
-// })
-
-
 module.exports.findData = findData;
